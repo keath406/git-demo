@@ -31,3 +31,9 @@ Route::get('/php-example', function () {
 
     return view('php_example', compact('name', 'age', 'message'));
 });
+
+Route::get('/hello', function () {
+    return 'Hello, Laravel!';
+});
+
+Route::get('/user/{name}', [App\Http\Controllers\UserController::class, 'show']);
