@@ -1,0 +1,84 @@
+/* 設定全局字體和背景顏色 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* 設置標題樣式 */
+h1 {
+    color: #0056b3;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 設置段落樣式 */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    margin: 10px auto;
+    max-width: 600px;
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    margin: 20px;
+    border: 2px solid #333;
+    background-color: #e0e0e0;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.item {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: #28a745;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+@keyframes example {
+    from { background-color: red; }
+    to { background-color: yellow; }
+}
+
+.animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation: example 2s infinite alternate;
+}

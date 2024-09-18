@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Basics</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
     <h1>歡迎來到 HTML 基礎教學！</h1>
@@ -17,6 +18,23 @@
         <input type="text" id="name" name="name">
         <button type="submit">提交</button>
     </form>
+    <div class="box">這是一個盒模型範例</div>
+        <div class="container">
+        <div class="item">項目 1</div>
+        <div class="item">項目 2</div>
+        <div class="item">項目 3</div>
+    </div>
+        <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+    <div class="animated-box"></div>
+
+
 
 </body>
 </html>
