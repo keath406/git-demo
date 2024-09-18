@@ -45,4 +45,7 @@ Route::post('/products', [ProductController::class, 'store']);          // 提�
 Route::get('/products/{id}/edit', [ProductController::class, 'edit']);  // 顯示編輯商品表單
 Route::put('/products/{id}', [ProductController::class, 'update']);     // 更新指定商品
 Route::delete('/products/{id}', [ProductController::class, 'destroy']); // 刪除指定商品
+Route::get('/testpage', function () {
+    return view('testpage');
+});
 
