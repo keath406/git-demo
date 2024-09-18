@@ -33,7 +33,15 @@
         <div class="grid-item">6</div>
     </div>
     <div class="animated-box"></div>
+    
+    <h1>JavaScript 基礎互動教學</h1>
 
+    <!-- 增加一個按鈕和一個顯示文本的區域 -->
+    <button id="myButton">點擊我</button>
+    <p id="myText">點擊上面的按鈕，看看會發生什麼！</p>
+
+    <!-- 引入 JavaScript 文件 -->
+    <script src="{{ asset('js/script.js') }}"></script>
 
 
 </body>
