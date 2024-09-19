@@ -45,6 +45,8 @@ Route::post('/products', [ProductController::class, 'store'])->name('products.st
 Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit'); // 顯示編輯商品表單
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update'); // 更新商品
 Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy'); // 刪除商品
+
+
 Route::get('/testpage', function () {
     return view('testpage');
 });
