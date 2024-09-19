@@ -1,42 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Product</title>
-</head>
-<body>
-    <h1>Edit Product</h1>
+@extends('layouts.app')
 
-    @if ($errors->any())
-        <div>
+@section('content')
+<div class="container">
+    <h1>編輯商品</h1>
+
+    @if($errors->any())
+        <div class="alert alert-danger">
             <ul>
-                @foreach ($errors->all() as $error)
+                @foreach($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
         </div>
     @endif
 
-    <form action="/products/{{ $product->id }}" method="POST">
+    <form action="{{ route('products.update', $product->id) }}" method="POST">
         @csrf
         @method('PUT')
-
-        <label for="name">Product Name:</label>
-        <input type="text" id="name" name="name" value="{{ $product->name }}">
-        <br>
-
-        <label for="price">Price:</label>
-        <input type="text" id="price" name="price" value="{{ $product->price }}">
-        <br>
-
-        <label for="quantity">Quantity:</label>
-        <input type="text" id="quantity" name="quantity" value="{{ $product->quantity }}">
-        <br>
-
-        <button type="submit">Update Product</button>
+        <div class="mb-3">
+            <label for="name" class="form-label">商品名稱</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $product->name) }}">
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">價格</label>
+            <input type="text" class="form-control" id="price" name="price" value="{{ old('price', $product->price) }}">
+        </div>
+        <div class="mb-3">
+            <label for="quantity" class="form-label">數量</label>
+            <input type="text" class="form-control" id="quantity" name="quantity" value="{{ old('quantity', $product->quantity) }}">
+        </div>
+        <button type="submit" class="btn btn-primary">更新商品</button>
     </form>
-
-    <a href="/products">Back to Product List</a>
-</body>
-</html>
+</div>
+@endsection

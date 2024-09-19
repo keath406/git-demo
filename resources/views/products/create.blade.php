@@ -1,40 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Product</title>
-</head>
-<body>
-    <h1>Create New Product</h1>
+@extends('layouts.app')
 
-    @if ($errors->any())
-        <div>
+@section('content')
+<div class="container">
+    <h1>新增商品</h1>
+
+    @if($errors->any())
+        <div class="alert alert-danger">
             <ul>
-                @foreach ($errors->all() as $error)
+                @foreach($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
         </div>
     @endif
 
-    <form action="/products" method="POST">
+    <form action="{{ route('products.store') }}" method="POST">
         @csrf
-        <label for="name">Product Name:</label>
-        <input type="text" id="name" name="name" value="{{ old('name') }}">
-        <br>
-
-        <label for="price">Price:</label>
-        <input type="text" id="price" name="price" value="{{ old('price') }}">
-        <br>
-
-        <label for="quantity">Quantity:</label>
-        <input type="text" id="quantity" name="quantity" value="{{ old('quantity') }}">
-        <br>
-
-        <button type="submit">Create Product</button>
+        <div class="mb-3">
+            <label for="name" class="form-label">商品名稱</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">價格</label>
+            <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}">
+        </div>
+        <div class="mb-3">
+            <label for="quantity" class="form-label">數量</label>
+            <input type="text" class="form-control" id="quantity" name="quantity" value="{{ old('quantity') }}">
+        </div>
+        <button type="submit" class="btn btn-primary">新增商品</button>
     </form>
-
-    <a href="/products">Back to Product List</a>
-</body>
-</html>
+</div>
+@endsection
