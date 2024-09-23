@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>商品列表</h1>
+    <h1>商品列表111</h1>
     <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">新增商品</a>
 
     @if(session('success'))
